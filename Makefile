@@ -8,4 +8,4 @@ dev:
 	venv\Scripts\activate && python main.py
 
 test:
-	venv\Scripts\activate && pytest
+	venv\Scripts\activate && pytest -v
