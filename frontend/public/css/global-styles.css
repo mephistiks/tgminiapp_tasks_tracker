@@ -1,0 +1,11 @@
+/* Пример общих стилей */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff !important;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}

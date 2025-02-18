@@ -1,0 +1,7 @@
+fastapi[standard]
+uvicorn
+aiogram
+sqlalchemy
+
+pytest-aio
+httpx

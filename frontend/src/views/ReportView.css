@@ -1,0 +1,4 @@
+table th {
+    cursor: pointer;
+    white-space: nowrap;
+}
