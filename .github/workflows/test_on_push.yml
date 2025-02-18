@@ -24,13 +24,9 @@ jobs:
       - name: Ruff
         run: |
           pip install ruff
-          ruff --format=github --target-version=py312 .
+          ruff .
         continue-on-error: true
 
       - name: pytest
         run: |
-          coverage run -m pytest -v -s
-
-      - name: покрытие
-        run: |
-          coverage report -m
+          pytest -v -s
