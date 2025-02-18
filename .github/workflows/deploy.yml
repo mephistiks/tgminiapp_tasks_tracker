@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/zabava/
+            cd /root/tg2
             git pull
 
       - name: clean front
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/tg2/frontend
+            cd /home/tg2
             rm -rf dist
 
       - name: copy from github shit to ssh server
