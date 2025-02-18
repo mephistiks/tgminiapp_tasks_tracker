@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/tg2
+            cd /root/tg2
             rm -rf dist
 
       - name: copy from github shit to ssh server
@@ -55,4 +55,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "dist/*"
-          target: "/home/tg2/"
+          target: "/root/tg2/"
