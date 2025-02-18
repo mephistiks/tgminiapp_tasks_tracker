@@ -56,3 +56,16 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "dist/*"
           target: "/root/tg2/"
+      
+      - name: run app
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.NAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /root/tg2
+            docker compose down
+            docker compose up --build
+
