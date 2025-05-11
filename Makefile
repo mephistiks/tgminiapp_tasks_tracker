@@ -9,3 +9,6 @@ test:
 
 dev:
 	venv\Scripts\activate && python main.py
+
+cert:
+	cd certs && mkcert localhost 127.0.0.1 ::1

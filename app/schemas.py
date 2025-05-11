@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Literal
 from datetime import date, datetime
 
 class UserCreate(BaseModel):
@@ -9,11 +9,11 @@ class UserCreate(BaseModel):
 
 class TaskCreate(BaseModel):
     title: str
-    description: Optional[str] = None
-    time_spent: Optional[float] = Field(None, ge=0)
-    task_date: Optional[date] = None
+    description: str | None = None
+    time_spent: float | None = Field(None, ge=0)
+    task_date: date | None = None
     init_data: str
-    group_id: Optional[int] = None
+    group_id: int | None = None
 
 
 class GroupCreate(BaseModel):
@@ -35,11 +35,10 @@ class InitData(BaseModel):
     init_data: str
 
 
-# Фильтр для отчётов:
 class TaskReportFilter(BaseModel):
     init_data: str
-    filter_mode: str  # "my" | "admin_all" | "group"
-    group_id: Optional[int] = None
+    filter_mode: Literal['my', 'admin_all', 'group']
+    group_id: int | None = None
 
 
 class TaskResponse(BaseModel):
@@ -47,8 +46,8 @@ class TaskResponse(BaseModel):
     title: str
     description: str
     time_spent: float
-    task_date: Optional[date]
-    creator_name: Optional[str]
-    group_id: Optional[int]
+    task_date: date | None = None
+    creator_name: str | None = None
+    group_id: int | None = None
     created_at: datetime
 
